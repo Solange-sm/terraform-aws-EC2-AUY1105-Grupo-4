@@ -1,1 +1,28 @@
-# terraform-aws-EC2-AUY1105-Grupo-4
+# Módulo Terraform: AWS EC2 (Grupo 4)
+
+**Integrantes:** Marysabel Aedo, Solange Milla
+
+## Descripción
+Este módulo de Terraform provisiona recursos de cómputo (instancias EC2) en AWS siguiendo los estándares y nomenclaturas de la asignatura Infraestructura como Código II (AUY1105). Está diseñado para ser invocado desde un Orquestador principal, recibiendo dinámicamente las dependencias de red.
+
+## Características de Seguridad
+El módulo incluye configuraciones predeterminadas para pasar análisis estáticos (Checkov):
+- Volúmenes EBS encriptados por defecto.
+- Metadatos de instancia seguros (IMDSv2).
+- Monitoreo detallado activado.
+- Asociación al perfil de instancia `LabInstanceProfile` de AWS Academy.
+
+## Ejemplo de Uso
+
+```hcl
+module "computo" {
+  source = "git::[https://github.com/Usuario/terraform-aws-EC2-AUY1105-Grupo-4.git?ref=v1.0.0](https://github.com/Usuario/terraform-aws-EC2-AUY1105-Grupo-4.git?ref=v1.0.0)"
+  
+  # Variables obligatorias inyectadas por el módulo de red
+  subnet_id         = "subnet-0123456789abcdef0"
+  security_group_id = "sg-0123456789abcdef0"
+  
+  # Variables opcionales (con valores por defecto en el módulo)
+  environment       = "AUY1105-appiac"
+  instance_type     = "t2.micro"
+}
