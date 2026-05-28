@@ -2,7 +2,7 @@
 # Módulo de Cómputo - Evaluación Parcial 2
 # ==============================================================================
 
-# checkov:skip=CKV_AWS_135: La instancia t2.micro no soporta optimización EBS
+# checkov:skip=CKV_AWS_135: La instancia t2.micro no soporta optimizacion EBS
 resource "aws_instance" "app_iac" {
     ami                    = var.ami_id
     instance_type          = var.instance_type
