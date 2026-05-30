@@ -16,7 +16,7 @@ El módulo incluye configuraciones predeterminadas para pasar análisis estátic
 
 ```hcl
 module "computo" {
-  source = "git::[https://github.com/Usuario/terraform-aws-EC2-AUY1105-Grupo-4.git?ref=v1.0.0](https://github.com/Usuario/terraform-aws-EC2-AUY1105-Grupo-4.git?ref=v1.0.0)"
+  source = "git::[https://github.com/Solange-sm/terraform-aws-vpc-AUY1105-Grupo-4.git?ref=v1.0.0](https://github.com/Solange-sm/terraform-aws-vpc-AUY1105-Grupo-4.git?ref=v1.0.0)"
   
   # Variables obligatorias inyectadas por el módulo de red
   subnet_id         = "subnet-0123456789abcdef0"
