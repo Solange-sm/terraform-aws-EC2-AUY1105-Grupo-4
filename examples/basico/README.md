@@ -9,11 +9,14 @@ Para validar la configuración localmente, navega a este directorio en tu termin
 1. Inicializar el entorno:
    ```bash
    terraform init
-Validar la sintaxis:
+   ```
 
-Bash
-terraform validate
-Generar un plan de ejecución (requiere IDs válidos de Subnet y SG en tu cuenta AWS):
+2. Validar la sintaxis:
+   ```bash
+   terraform validate
+   ```
 
-Bash
-terraform plan
+3. Generar un plan de ejecución (requiere IDs válidos de Subnet y SG en tu cuenta AWS):
+   ```bash
+   terraform plan
+   ```
