@@ -26,3 +26,21 @@ module "computo" {
   environment       = "AUY1105-appiac"
   instance_type     = "t2.micro"
 }
+```
+
+## Referencia de Variables (Inputs)
+
+| Nombre | Descripción | Tipo | Requerido | Valor por Defecto |
+|--------|-------------|------|-----------|-------------------|
+| `subnet_id` | ID de la subred destino. Debe ser inyectada por el Orquestador desde el módulo de red. | `string` | **Sí** | n/a |
+| `security_group_id` | ID del Grupo de Seguridad asociado. Debe ser inyectado por el Orquestador desde el módulo de red. | `string` | **Sí** | n/a |
+| `ami_id` | Identificador de la Imagen de Máquina de Amazon (AMI) a instanciar. | `string` | No | `"ami-0ec10929233384c7f"` |
+| `instance_type` | Tipo de instancia computacional. | `string` | No | `"t2.micro"` |
+| `environment` | Sufijo de nomenclatura para etiquetado estándar. | `string` | No | `"AUY1105-appiac"` |
+
+## Salidas (Outputs)
+
+| Nombre | Descripción |
+|--------|-------------|
+| `instance_id` | Identificador único de la instancia EC2 desplegada. |
+| `instance_ip` | Dirección IPv4 pública asignada para la validación del despliegue y acceso web. |
